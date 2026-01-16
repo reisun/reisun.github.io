@@ -6,9 +6,30 @@
   font-size: 2rem;
   font-weight: 700;
   color: #111;
-  margin: 0 0 1rem;
+  margin: 0 0 1.5rem;
 }
 
-.description {
-  color: #666;
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.message {
+  color: #57606a;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.error {
+  color: #cf222e;
+  text-align: center;
+  padding: 3rem 1rem;
 }

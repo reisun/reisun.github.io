@@ -15,8 +15,8 @@ GitHub Pages ポートフォリオサイトの実装タスク一覧
 | 3 | ルーティング | React Router 設定 (`/`, `/projects/`, `/about/`) | A | 1 | [x] |
 | 4 | トップページ | Hero セクション (Title, Subtitle, CTA ボタン) | C-1 | 2, 3 | [x] |
 | 5 | データ取得スクリプト | `scripts/fetch-projects.js` (GitHub API → JSON) | B | 1 | [x] |
-| 6 | Projects ページ | カード一覧 + 検索/ソート機能 | C-2 | 2, 3, 5 | [ ] |
-| 7 | About ページ | 最小構成で実装 | C-3 | 2, 3 | [ ] |
+| 6 | Projects ページ | カード一覧 + 検索/ソート機能 | C-2 | 2, 3, 5 | [x] |
+| 7 | About ページ | 最小構成で実装 | C-3 | 2, 3 | [x] |
 | 8 | CI/CD | GitHub Actions ワークフロー (ビルド + デプロイ) | B | 5 | [x] |
 | 9 | スタイリング | Figma デザインの適用 | D | 2-7 | [ ] |
 
@@ -130,9 +130,9 @@ GitHub Pages ポートフォリオサイトの実装タスク一覧
 
 ### 6. Projects ページ
 
-- [ ] `ProjectsPage` コンポーネント
-- [ ] `projects.json` 読み込み
-- [ ] `ProjectCard` コンポーネント
+- [x] `ProjectsPage` コンポーネント
+- [x] `projects.json` 読み込み
+- [x] `ProjectCard` コンポーネント
   - Title (name)
   - Description
   - Language badge
@@ -140,10 +140,10 @@ GitHub Pages ポートフォリオサイトの実装タスク一覧
   - Updated date
   - Repo link (required)
   - Demo link (if exists)
-- [ ] 検索機能 (name / description)
-- [ ] ソート機能 (updated desc)
-- [ ] Empty state: "No projects found"
-- [ ] Error state: "Failed to load projects"
+- [x] 検索機能 (name / description)
+- [x] ソート機能 (updated desc)
+- [x] Empty state: "No projects found"
+- [x] Error state: "Failed to load projects"
 
 **成果物:**
 - `src/pages/ProjectsPage.tsx`
@@ -155,8 +155,8 @@ GitHub Pages ポートフォリオサイトの実装タスク一覧
 
 ### 7. About ページ
 
-- [ ] `AboutPage` コンポーネント
-- [ ] 最小構成で実装
+- [x] `AboutPage` コンポーネント
+- [x] 最小構成で実装
   - 名前
   - 簡単な自己紹介
 
