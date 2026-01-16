@@ -10,9 +10,9 @@ GitHub Pages ポートフォリオサイトの実装タスク一覧
 
 | # | Task | Description | Dependencies | Status |
 |---|------|-------------|--------------|--------|
-| 1 | 環境構築 | Vite + React プロジェクト初期化、Docker Compose 設定 | - | [ ] |
-| 2 | 共通レイアウト | Header (sticky) / Footer コンポーネント | 1 | [ ] |
-| 3 | ルーティング | React Router 設定 (`/`, `/projects/`, `/about/`) | 1 | [ ] |
+| 1 | 環境構築 | Vite + React プロジェクト初期化、Docker Compose 設定 | - | [x] |
+| 2 | 共通レイアウト | Header (sticky) / Footer コンポーネント | 1 | [x] |
+| 3 | ルーティング | React Router 設定 (`/`, `/projects/`, `/about/`) | 1 | [x] |
 | 4 | トップページ | Hero セクション (Title, Subtitle, CTA ボタン) | 2, 3 | [ ] |
 | 5 | データ取得スクリプト | `scripts/fetch-projects.js` (GitHub API → JSON) | 1 | [ ] |
 | 6 | Projects ページ | カード一覧 + 検索/ソート機能 | 2, 3, 5 | [ ] |
@@ -26,12 +26,12 @@ GitHub Pages ポートフォリオサイトの実装タスク一覧
 
 ### 1. 環境構築
 
-- [ ] Vite + React (TypeScript) プロジェクト作成
-- [ ] `package.json` 設定
-- [ ] `docker-compose.yml` 作成
-- [ ] `Dockerfile` 作成 (開発用)
-- [ ] `.gitignore` 更新
-- [ ] ローカルで `docker compose up` で起動確認
+- [x] Vite + React (TypeScript) プロジェクト作成
+- [x] `package.json` 設定
+- [x] `docker-compose.yml` 作成
+- [x] `Dockerfile` 作成 (開発用)
+- [x] `.gitignore` 更新
+- [x] ローカルで `docker compose up` で起動確認
 
 **成果物:**
 - `package.json`
@@ -45,11 +45,11 @@ GitHub Pages ポートフォリオサイトの実装タスク一覧
 
 ### 2. 共通レイアウト
 
-- [ ] `Layout` コンポーネント作成
-- [ ] `Header` コンポーネント (sticky)
+- [x] `Layout` コンポーネント作成
+- [x] `Header` コンポーネント (sticky)
   - サイトタイトル (左)
   - ナビゲーション (右): Home, Projects, About
-- [ ] `Footer` コンポーネント
+- [x] `Footer` コンポーネント
   - Copyright
   - Build info (optional)
 - [ ] モバイル対応 (後回し可)
@@ -63,8 +63,8 @@ GitHub Pages ポートフォリオサイトの実装タスク一覧
 
 ### 3. ルーティング
 
-- [ ] `react-router-dom` 導入
-- [ ] ルート定義
+- [x] `react-router-dom` 導入
+- [x] ルート定義
   - `/` → Home
   - `/projects/` → Projects
   - `/about/` → About
