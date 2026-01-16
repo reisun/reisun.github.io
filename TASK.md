@@ -13,7 +13,7 @@ GitHub Pages ポートフォリオサイトの実装タスク一覧
 | 1 | 環境構築 | Vite + React プロジェクト初期化、Docker Compose 設定 | A | - | [x] |
 | 2 | 共通レイアウト | Header (sticky) / Footer コンポーネント | A | 1 | [x] |
 | 3 | ルーティング | React Router 設定 (`/`, `/projects/`, `/about/`) | A | 1 | [x] |
-| 4 | トップページ | Hero セクション (Title, Subtitle, CTA ボタン) | C-1 | 2, 3 | [ ] |
+| 4 | トップページ | Hero セクション (Title, Subtitle, CTA ボタン) | C-1 | 2, 3 | [x] |
 | 5 | データ取得スクリプト | `scripts/fetch-projects.js` (GitHub API → JSON) | B | 1 | [x] |
 | 6 | Projects ページ | カード一覧 + 検索/ソート機能 | C-2 | 2, 3, 5 | [ ] |
 | 7 | About ページ | 最小構成で実装 | C-3 | 2, 3 | [ ] |
@@ -77,8 +77,8 @@ GitHub Pages ポートフォリオサイトの実装タスク一覧
 
 ### 4. トップページ
 
-- [ ] `HomePage` コンポーネント
-- [ ] `Hero` セクション
+- [x] `HomePage` コンポーネント
+- [x] `Hero` セクション
   - Title
   - Subtitle
   - CTA Primary: "View Projects" → `/projects/`
@@ -88,7 +88,6 @@ GitHub Pages ポートフォリオサイトの実装タスク一覧
 
 **成果物:**
 - `src/pages/HomePage.tsx`
-- `src/components/Hero.tsx`
 
 ---
 
