@@ -57,7 +57,10 @@ export function ProjectsPage() {
   if (status === 'loading') {
     return (
       <div className={styles.container}>
-        <h1 className={styles.title}>Projects</h1>
+        <header className={styles.header}>
+          <h1 className={styles.title}>Projects</h1>
+          <p className={styles.subtitle}>Browse my open source projects</p>
+        </header>
         <p className={styles.message}>Loading...</p>
       </div>
     );
@@ -66,7 +69,10 @@ export function ProjectsPage() {
   if (status === 'error') {
     return (
       <div className={styles.container}>
-        <h1 className={styles.title}>Projects</h1>
+        <header className={styles.header}>
+          <h1 className={styles.title}>Projects</h1>
+          <p className={styles.subtitle}>Browse my open source projects</p>
+        </header>
         <p className={styles.error}>Failed to load projects. Please try again later.</p>
       </div>
     );
@@ -74,7 +80,10 @@ export function ProjectsPage() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Projects</h1>
+      <header className={styles.header}>
+        <h1 className={styles.title}>Projects</h1>
+        <p className={styles.subtitle}>Browse my open source projects</p>
+      </header>
 
       <div className={styles.controls}>
         <SearchInput value={search} onChange={setSearch} />

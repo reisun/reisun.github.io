@@ -9,5 +9,12 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: var(--space-800) var(--space-600);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .main {
+    padding: var(--space-600) var(--space-400);
+  }
 }

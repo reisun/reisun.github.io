@@ -18,7 +18,7 @@ GitHub Pages ポートフォリオサイトの実装タスク一覧
 | 6 | Projects ページ | カード一覧 + 検索/ソート機能 | C-2 | 2, 3, 5 | [x] |
 | 7 | About ページ | 最小構成で実装 | C-3 | 2, 3 | [x] |
 | 8 | CI/CD | GitHub Actions ワークフロー (ビルド + デプロイ) | B | 5 | [x] |
-| 9 | スタイリング | Figma デザインの適用 | D | 2-7 | [ ] |
+| 9 | スタイリング | Figma デザインの適用 | D | 2-7 | [x] |
 
 ---
 
@@ -52,7 +52,7 @@ GitHub Pages ポートフォリオサイトの実装タスク一覧
 - [x] `Footer` コンポーネント
   - Copyright
   - Build info (optional)
-- [ ] モバイル対応 (後回し可)
+- [x] モバイル対応 (Group D で実装)
 
 **成果物:**
 - `src/components/Layout.tsx`
@@ -184,13 +184,14 @@ GitHub Pages ポートフォリオサイトの実装タスク一覧
 
 ### 9. スタイリング
 
-- [ ] CSS 方針決定 (CSS Modules / Tailwind / etc.)
-- [ ] Figma デザインをコンポーネントに適用
-- [ ] レスポンシブ対応
-- [ ] カラーパレット / タイポグラフィ統一
+- [x] CSS 方針決定 (CSS Modules + CSS変数)
+- [x] Figma デザインをコンポーネントに適用
+- [x] レスポンシブ対応 (640px / 768px ブレークポイント)
+- [x] カラーパレット / タイポグラフィ統一
 
 **成果物:**
-- 各コンポーネントのスタイル
+- `src/index.css` (CSS変数定義)
+- 各コンポーネントのスタイル (*.module.css)
 
 ---
 
@@ -216,6 +217,7 @@ Group C (Page Implementation) - 並行作業可能
 
 Group D (Polish)
 └── 9. スタイリング
+        ✅ 完了
 ```
 
 ---
