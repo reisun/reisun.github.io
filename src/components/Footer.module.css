@@ -1,0 +1,30 @@
+.footer {
+  border-top: 1px solid #e5e5e5;
+  background-color: #fafafa;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.copyright {
+  color: #666;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.sourceLink {
+  color: #666;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.sourceLink:hover {
+  color: #111;
+  text-decoration: underline;
+}

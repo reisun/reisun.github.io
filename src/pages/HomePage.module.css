@@ -1,0 +1,64 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 60vh;
+  padding: 4rem 1rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #666;
+  margin: 0 0 2rem;
+}
+
+.cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.primaryButton {
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #111;
+}
+
+.primaryButton:hover {
+  background-color: #333;
+  border-color: #333;
+}
+
+.secondaryButton {
+  background-color: #fff;
+  color: #111;
+  border: 1px solid #e5e5e5;
+}
+
+.secondaryButton:hover {
+  background-color: #fafafa;
+  border-color: #ccc;
+}
