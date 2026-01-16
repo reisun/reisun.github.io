@@ -8,17 +8,17 @@ GitHub Pages ポートフォリオサイトの実装タスク一覧
 
 ## Tasks
 
-| # | Task | Description | Dependencies | Status |
-|---|------|-------------|--------------|--------|
-| 1 | 環境構築 | Vite + React プロジェクト初期化、Docker Compose 設定 | - | [x] |
-| 2 | 共通レイアウト | Header (sticky) / Footer コンポーネント | 1 | [x] |
-| 3 | ルーティング | React Router 設定 (`/`, `/projects/`, `/about/`) | 1 | [x] |
-| 4 | トップページ | Hero セクション (Title, Subtitle, CTA ボタン) | 2, 3 | [ ] |
-| 5 | データ取得スクリプト | `scripts/fetch-projects.js` (GitHub API → JSON) | 1 | [x] |
-| 6 | Projects ページ | カード一覧 + 検索/ソート機能 | 2, 3, 5 | [ ] |
-| 7 | About ページ | 最小構成で実装 | 2, 3 | [ ] |
-| 8 | CI/CD | GitHub Actions ワークフロー (ビルド + デプロイ) | 5 | [x] |
-| 9 | スタイリング | Figma デザインの適用 | 2-7 | [ ] |
+| # | Task | Description | Group | Dependencies | Status |
+|---|------|-------------|-------|--------------|--------|
+| 1 | 環境構築 | Vite + React プロジェクト初期化、Docker Compose 設定 | A | - | [x] |
+| 2 | 共通レイアウト | Header (sticky) / Footer コンポーネント | A | 1 | [x] |
+| 3 | ルーティング | React Router 設定 (`/`, `/projects/`, `/about/`) | A | 1 | [x] |
+| 4 | トップページ | Hero セクション (Title, Subtitle, CTA ボタン) | C-1 | 2, 3 | [ ] |
+| 5 | データ取得スクリプト | `scripts/fetch-projects.js` (GitHub API → JSON) | B | 1 | [x] |
+| 6 | Projects ページ | カード一覧 + 検索/ソート機能 | C-2 | 2, 3, 5 | [ ] |
+| 7 | About ページ | 最小構成で実装 | C-3 | 2, 3 | [ ] |
+| 8 | CI/CD | GitHub Actions ワークフロー (ビルド + デプロイ) | B | 5 | [x] |
+| 9 | スタイリング | Figma デザインの適用 | D | 2-7 | [ ] |
 
 ---
 
@@ -204,15 +204,16 @@ Group A (Frontend Foundation)     Group B (Data Layer)
 ├── 1. 環境構築                    ├── 5. データ取得スクリプト
 ├── 2. 共通レイアウト              └── 8. CI/CD
 └── 3. ルーティング
+        ✅ 完了                            ✅ 完了
 
-         ↓ (A 完了後)
+                    ↓ (A, B 完了後)
 
-Group C (Page Implementation)
-├── 4. トップページ
-├── 6. Projects ページ
-└── 7. About ページ
+Group C (Page Implementation) - 並行作業可能
+├── C-1: 4. トップページ      (独立)
+├── C-2: 6. Projects ページ   (独立)
+└── C-3: 7. About ページ      (独立)
 
-         ↓ (全体完了後)
+                    ↓ (C 完了後)
 
 Group D (Polish)
 └── 9. スタイリング
