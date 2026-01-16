@@ -14,10 +14,10 @@ GitHub Pages ポートフォリオサイトの実装タスク一覧
 | 2 | 共通レイアウト | Header (sticky) / Footer コンポーネント | 1 | [x] |
 | 3 | ルーティング | React Router 設定 (`/`, `/projects/`, `/about/`) | 1 | [x] |
 | 4 | トップページ | Hero セクション (Title, Subtitle, CTA ボタン) | 2, 3 | [ ] |
-| 5 | データ取得スクリプト | `scripts/fetch-projects.js` (GitHub API → JSON) | 1 | [ ] |
+| 5 | データ取得スクリプト | `scripts/fetch-projects.js` (GitHub API → JSON) | 1 | [x] |
 | 6 | Projects ページ | カード一覧 + 検索/ソート機能 | 2, 3, 5 | [ ] |
 | 7 | About ページ | 最小構成で実装 | 2, 3 | [ ] |
-| 8 | CI/CD | GitHub Actions ワークフロー (ビルド + デプロイ) | 5 | [ ] |
+| 8 | CI/CD | GitHub Actions ワークフロー (ビルド + デプロイ) | 5 | [x] |
 | 9 | スタイリング | Figma デザインの適用 | 2-7 | [ ] |
 
 ---
@@ -94,15 +94,15 @@ GitHub Pages ポートフォリオサイトの実装タスク一覧
 
 ### 5. データ取得スクリプト
 
-- [ ] `scripts/fetch-projects.js` 作成
-- [ ] GitHub REST API 呼び出し
+- [x] `scripts/fetch-projects.js` 作成
+- [x] GitHub REST API 呼び出し
   - `GET /users/{username}/repos?per_page=100&sort=updated`
-- [ ] フィルタリング
+- [x] フィルタリング
   - `archived === true` → 除外
   - `fork === true` → 除外
-- [ ] データ変換 (schema に従う)
-- [ ] `public/projects.json` 出力
-- [ ] npm script 追加: `"fetch-projects": "node scripts/fetch-projects.js"`
+- [x] データ変換 (schema に従う)
+- [x] `public/projects.json` 出力
+- [x] npm script 追加: `"fetch-projects": "node scripts/fetch-projects.js"`
 
 **成果物:**
 - `scripts/fetch-projects.js`
@@ -168,15 +168,15 @@ GitHub Pages ポートフォリオサイトの実装タスク一覧
 
 ### 8. CI/CD
 
-- [ ] `.github/workflows/deploy.yml` 作成
-- [ ] Workflow steps:
+- [x] `.github/workflows/deploy.yml` 作成
+- [x] Workflow steps:
   1. Checkout
   2. Setup Node.js
   3. Install dependencies
   4. Run `fetch-projects` script (with GITHUB_TOKEN)
   5. Build
   6. Deploy to GitHub Pages
-- [ ] トリガー: push to main
+- [x] トリガー: push to main
 
 **成果物:**
 - `.github/workflows/deploy.yml`
