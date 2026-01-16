@@ -85,9 +85,10 @@
 - `updated desc` (推奨)
 - `stars desc` (任意)
 
-**フィルタ (任意):**
-- `language`
-- `topic`
+**フィルタ:**
+- `hasDemo` - Demo あり/すべて表示
+- `language` (任意)
+- `topic` (任意)
 
 ### Card Component
 

@@ -21,6 +21,7 @@ interface GitHubRepo {
   description: string | null;
   html_url: string;
   homepage: string | null;
+  has_pages: boolean;
   language: string | null;
   topics: string[];
   stargazers_count: number;
@@ -34,6 +35,7 @@ interface Project {
   description: string | null;
   repoUrl: string;
   demoUrl: string | null;
+  hasDemo: boolean;
   language: string | null;
   topics: string[];
   stars: number;
@@ -79,12 +81,19 @@ function filterRepos(repos: GitHubRepo[]): GitHubRepo[] {
   });
 }
 
-function transformToProject(repo: GitHubRepo): Project {
+function transformToProject(repo: GitHubRepo, username: string): Project {
+  // Use homepage if set, otherwise construct GitHub Pages URL if has_pages is true
+  const demoUrl = repo.homepage
+    ? repo.homepage
+    : repo.has_pages
+      ? `https://${username}.github.io/${repo.name}/`
+      : null;
   return {
     name: repo.name,
     description: repo.description,
     repoUrl: repo.html_url,
-    demoUrl: repo.homepage || null,
+    demoUrl,
+    hasDemo: Boolean(demoUrl),
     language: repo.language,
     topics: repo.topics || [],
     stars: repo.stargazers_count,
@@ -109,7 +118,9 @@ async function main(): Promise<void> {
     console.log(`After filtering: ${filteredRepos.length} repositories`);
 
     // Transform to project format
-    const projects = filteredRepos.map(transformToProject);
+    const projects = filteredRepos.map((repo) =>
+      transformToProject(repo, username)
+    );
 
     // Build output data
     const data: ProjectsData = {

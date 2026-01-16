@@ -3,6 +3,7 @@ import type { Project, ProjectsData } from '../types/project';
 import { ProjectCard } from '../components/ProjectCard';
 import { SearchInput } from '../components/SearchInput';
 import { SortSelect, type SortOption } from '../components/SortSelect';
+import { FilterToggle } from '../components/FilterToggle';
 import styles from './ProjectsPage.module.css';
 
 type Status = 'loading' | 'success' | 'error';
@@ -12,6 +13,7 @@ export function ProjectsPage() {
   const [status, setStatus] = useState<Status>('loading');
   const [search, setSearch] = useState('');
   const [sort, setSort] = useState<SortOption>('updated');
+  const [demoOnly, setDemoOnly] = useState(false);
 
   useEffect(() => {
     async function fetchProjects() {
@@ -34,6 +36,9 @@ export function ProjectsPage() {
     const searchLower = search.toLowerCase();
 
     const filtered = projects.filter((project) => {
+      // Demo filter
+      if (demoOnly && !project.hasDemo) return false;
+      // Search filter
       if (!search) return true;
       const nameMatch = project.name.toLowerCase().includes(searchLower);
       const descMatch = project.description?.toLowerCase().includes(searchLower);
@@ -52,7 +57,7 @@ export function ProjectsPage() {
           return 0;
       }
     });
-  }, [projects, search, sort]);
+  }, [projects, search, sort, demoOnly]);
 
   if (status === 'loading') {
     return (
@@ -88,6 +93,11 @@ export function ProjectsPage() {
       <div className={styles.controls}>
         <SearchInput value={search} onChange={setSearch} />
         <SortSelect value={sort} onChange={setSort} />
+        <FilterToggle
+          label="Demo only"
+          checked={demoOnly}
+          onChange={setDemoOnly}
+        />
       </div>
 
       {filteredAndSorted.length === 0 ? (

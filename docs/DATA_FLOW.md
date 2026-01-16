@@ -86,6 +86,7 @@ GET https://api.github.com/users/{username}/repos?per_page=100&sort=updated
       "description": "Repository description",
       "repoUrl": "https://github.com/username/repo-name",
       "demoUrl": "https://username.github.io/repo-name/",
+      "hasDemo": true,
       "language": "TypeScript",
       "topics": ["react", "typescript"],
       "stars": 42,
@@ -97,18 +98,19 @@ GET https://api.github.com/users/{username}/repos?per_page=100&sort=updated
 
 ### Field Specifications
 
-| Field       | Type     | Required | Note                    |
-| ----------- | -------- | -------- | ----------------------- |
-| generatedAt | string   | Yes      | ISO 8601 形式           |
-| items       | array    | Yes      | プロジェクト配列        |
-| name        | string   | Yes      |                         |
-| description | string   | No       | null 許容               |
-| repoUrl     | string   | Yes      |                         |
-| demoUrl     | string   | No       | 存在する場合のみ        |
-| language    | string   | No       |                         |
-| topics      | string[] | No       |                         |
-| stars       | number   | Yes      |                         |
-| updatedAt   | string   | Yes      | ISO 8601 形式           |
+| Field       | Type     | Required | Note                                |
+| ----------- | -------- | -------- | ----------------------------------- |
+| generatedAt | string   | Yes      | ISO 8601 形式                       |
+| items       | array    | Yes      | プロジェクト配列                    |
+| name        | string   | Yes      |                                     |
+| description | string   | No       | null 許容                           |
+| repoUrl     | string   | Yes      |                                     |
+| demoUrl     | string   | No       | 存在する場合のみ                    |
+| hasDemo     | boolean  | Yes      | demoUrl が存在する場合 true         |
+| language    | string   | No       |                                     |
+| topics      | string[] | No       |                                     |
+| stars       | number   | Yes      |                                     |
+| updatedAt   | string   | Yes      | ISO 8601 形式                       |
 
 ---
 

@@ -3,6 +3,7 @@ export interface Project {
   description: string | null;
   repoUrl: string;
   demoUrl: string | null;
+  hasDemo: boolean;
   language: string | null;
   topics: string[];
   stars: number;
