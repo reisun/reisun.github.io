@@ -6,7 +6,7 @@ export function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link to="/" className={styles.logo}>
-          reisun
+          REISUN
         </Link>
         <nav className={styles.nav}>
           <NavLink

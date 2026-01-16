@@ -11,6 +11,13 @@
   margin-bottom: 0;
 }
 
+.logo {
+  width: 120px;
+  height: 120px;
+  margin-bottom: var(--space-600);
+  color: var(--color-text-default);
+}
+
 .title {
   font-size: var(--font-size-title);
   font-weight: var(--font-weight-bold);
@@ -77,6 +84,11 @@
     min-height: 50vh;
   }
 
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
   .title {
     font-size: 48px;
     letter-spacing: -1.44px;
@@ -93,6 +105,12 @@
     padding: var(--space-1200) var(--space-400);
     margin: calc(-1 * var(--space-600)) calc(-1 * var(--space-400));
     margin-bottom: 0;
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: var(--space-400);
   }
 
   .title {

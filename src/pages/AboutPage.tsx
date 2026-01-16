@@ -8,7 +8,7 @@ export function AboutPage() {
         <p className={styles.subtitle}>Learn more about me</p>
       </header>
       <section className={styles.profile}>
-        <h2 className={styles.name}>reisun</h2>
+        <h2 className={styles.name}>REISUN</h2>
         <p className={styles.bio}>
           Software Developer. Building tools and applications with modern web technologies.
         </p>
