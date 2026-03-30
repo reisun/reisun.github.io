@@ -12,9 +12,7 @@
 }
 
 .logo {
-  width: 120px;
-  height: 120px;
-  margin-bottom: var(--space-600);
+  width: 240px;
   color: var(--color-text-default);
 }
 
@@ -85,8 +83,7 @@
   }
 
   .logo {
-    width: 100px;
-    height: 100px;
+    width: 240px;
   }
 
   .title {
@@ -108,9 +105,7 @@
   }
 
   .logo {
-    width: 80px;
-    height: 80px;
-    margin-bottom: var(--space-400);
+    width: 120px;
   }
 
   .title {

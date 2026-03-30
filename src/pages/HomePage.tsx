@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import styles from './HomePage.module.css'
-import logoSvg from '../assets/logo.svg'
+import Logo from '../assets/logo.svg?react'
 
 export function HomePage() {
   return (
     <section className={styles.hero}>
-      <img src={logoSvg} alt="REISUN logo" className={styles.logo} />
+      <Logo aria-label="REISUN logo" className={styles.logo} />
       <h1 className={styles.title}>REISUN</h1>
       <p className={styles.subtitle}>Software Developer</p>
       <div className={styles.cta}>
