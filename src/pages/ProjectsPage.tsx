@@ -1,12 +1,42 @@
 import { useState, useEffect, useMemo } from 'react';
-import type { Project, ProjectsData } from '../types/project';
+import type { Project } from '../types/project';
 import { ProjectCard } from '../components/ProjectCard';
 import { SearchInput } from '../components/SearchInput';
 import { SortSelect, type SortOption } from '../components/SortSelect';
 import { FilterToggle } from '../components/FilterToggle';
 import styles from './ProjectsPage.module.css';
 
-type Status = 'loading' | 'success' | 'error';
+type Status = 'loading' | 'success' | 'error' | 'rate-limited';
+
+interface GitHubRepo {
+  name: string;
+  description: string | null;
+  html_url: string;
+  homepage: string | null;
+  has_pages: boolean;
+  language: string | null;
+  topics: string[];
+  stargazers_count: number;
+  updated_at: string;
+  archived: boolean;
+  fork: boolean;
+}
+
+function toProject(repo: GitHubRepo): Project {
+  const demoUrl =
+    repo.homepage || (repo.has_pages ? `https://reisun.github.io/${repo.name}/` : null);
+  return {
+    name: repo.name,
+    description: repo.description,
+    repoUrl: repo.html_url,
+    demoUrl,
+    hasDemo: demoUrl !== null,
+    language: repo.language,
+    topics: repo.topics,
+    stars: repo.stargazers_count,
+    updatedAt: repo.updated_at,
+  };
+}
 
 export function ProjectsPage() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -18,12 +48,21 @@ export function ProjectsPage() {
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const response = await fetch('/projects.json');
+        const response = await fetch(
+          'https://api.github.com/users/reisun/repos?per_page=100',
+        );
+        if (response.status === 403 || response.status === 429) {
+          setStatus('rate-limited');
+          return;
+        }
         if (!response.ok) {
           throw new Error('Failed to fetch projects');
         }
-        const data: ProjectsData = await response.json();
-        setProjects(data.items);
+        const repos: GitHubRepo[] = await response.json();
+        const fetched = repos
+          .filter((repo) => !repo.archived && !repo.fork)
+          .map(toProject);
+        setProjects(fetched);
         setStatus('success');
       } catch {
         setStatus('error');
@@ -67,6 +106,20 @@ export function ProjectsPage() {
           <p className={styles.subtitle}>Browse my open source projects</p>
         </header>
         <p className={styles.message}>Loading...</p>
+      </div>
+    );
+  }
+
+  if (status === 'rate-limited') {
+    return (
+      <div className={styles.container}>
+        <header className={styles.header}>
+          <h1 className={styles.title}>Projects</h1>
+          <p className={styles.subtitle}>Browse my open source projects</p>
+        </header>
+        <p className={styles.error}>
+          GitHub API rate limit exceeded. Please try again in a few minutes.
+        </p>
       </div>
     );
   }
