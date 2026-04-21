@@ -44,7 +44,7 @@
 }
 
 .error {
-  color: #cf222e;
+  color: var(--color-text-error);
   text-align: center;
   padding: var(--space-1200) var(--space-400);
   font-size: var(--font-size-body);

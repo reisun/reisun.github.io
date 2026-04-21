@@ -18,11 +18,16 @@
   --color-text-tertiary: #b3b3b3;
   --color-text-on-brand: #f5f5f5;
   --color-text-link: #0969da;
+  --color-text-error: #cf222e;
 
   /* Colors - Border */
   --color-border-default: #d9d9d9;
   --color-border-secondary: #767676;
   --color-border-brand: #2c2c2c;
+
+  /* Colors - Effects */
+  --color-focus-shadow: rgba(44, 44, 44, 0.1);
+  color-scheme: light;
 
   /* Spacing */
   --space-050: 2px;
@@ -87,4 +92,26 @@ h1, h2, h3, h4, h5, h6 {
 img {
   max-width: 100%;
   height: auto;
+}
+
+[data-theme="dark"] {
+  --color-bg-default: #161b22;
+  --color-bg-secondary: #0d1117;
+  --color-bg-tertiary: #30363d;
+  --color-bg-brand: #f0f0f0;
+  --color-bg-brand-tertiary: #21262d;
+
+  --color-text-default: #e6edf3;
+  --color-text-secondary: #8b949e;
+  --color-text-tertiary: #484f58;
+  --color-text-on-brand: #161b22;
+  --color-text-link: #58a6ff;
+  --color-text-error: #f85149;
+
+  --color-border-default: #30363d;
+  --color-border-secondary: #484f58;
+  --color-border-brand: #f0f0f0;
+
+  --color-focus-shadow: rgba(240, 240, 240, 0.1);
+  color-scheme: dark;
 }
