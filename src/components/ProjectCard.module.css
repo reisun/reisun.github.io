@@ -122,12 +122,9 @@
     font-size: var(--font-size-subheading);
   }
 
-  .links {
-    flex-direction: column;
-  }
-
   .repoLink,
   .demoLink {
+    flex: 1;
     text-align: center;
   }
 }
