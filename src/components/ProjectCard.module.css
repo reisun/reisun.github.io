@@ -62,7 +62,7 @@
   width: 12px;
   height: 12px;
   border-radius: var(--radius-full);
-  background: var(--color-bg-brand);
+  background: var(--language-color, var(--color-bg-brand));
 }
 
 .stars {
